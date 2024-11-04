@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /*  SOME GLOBAL STYLES HEREE  */
+}
+
+@layer utilities {
+    /*  YOUR CUSTOM UTILITY CLASSES  */
+
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+
+
+    .grid-center {
+        @apply grid place-items-center;
+    }
+
+    .shimmer {
+        @apply bg-white bg-no-repeat inline-block;
+
+        background-image: linear-gradient(
+                to right,
+                #ffffff 0%,
+                #DBDFE8 20%,
+                #DBDFE8 60%,
+                #ffffffbb 80%
+        );
+        background-size: 100% 100%;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: placeholderShimmer;
+        animation-timing-function: ease;
+    }
+
+    .dark .shimmer {
+        @apply bg-black bg-no-repeat inline-block;
+
+        background-image: linear-gradient(
+                to right,
+                #343540 0%,
+                #4B4B59 20%,
+                #4B4B59 40%,
+                #343540 100%
+        );
+        background-size: 100% 100%;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: placeholderShimmer;
+        animation-timing-function: ease;
+    }
+
+    @keyframes placeholderShimmer {
+        0% {
+            background-position: -400px 0;
+        }
+        100% {
+            background-position: 400px 0;
+        }
+    }
+
+    .transition-200 {
+        @apply transition-all duration-200;
+    }
+
+    .transition-300 {
+        @apply transition-all duration-300;
+    }
+
+    .absolute-x {
+        @apply absolute !-translate-x-1/2 !left-1/2;
+    }
+
+    .absolute-y {
+        @apply absolute !-translate-y-1/2 !top-1/2;
+    }
+
+    .absolute-center {
+        @apply absolute-x absolute-y;
+    }
+
+    .flex-y-center {
+        @apply flex items-center;
+    }
+
+    .flex-x-center {
+        @apply flex justify-center;
+    }
+
+    .flex-center-between {
+        @apply flex justify-between items-center;
+    }
+
+    .flex-between {
+        @apply flex justify-between;
+    }
+
+    .no-scrollbar {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
